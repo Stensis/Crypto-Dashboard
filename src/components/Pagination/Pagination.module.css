@@ -1,0 +1,20 @@
+.buttonPage {
+  border: 1px solid #1976d2;
+  border-radius: 20px;
+  color: transparent transparent;
+  background-color: white;
+  height: 40px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.buttonPage:hover {
+  background-color: rgba(1, 1, 2, 0.04);
+  border-color: rgb(13, 103, 194);
+}
+
+.buttonPage.activeButton {
+  background-color: rgba(16, 22, 5, 0.04);
+}

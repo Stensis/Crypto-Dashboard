@@ -1,0 +1,12 @@
+.emptyView {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  text-align: center;
+  color: #333;
+  font-size: 36px;
+}

@@ -1,0 +1,9 @@
+.errorViewContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  color: #ca2115;
+  transform: translate(-50%, -50%);
+}
