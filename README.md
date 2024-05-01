@@ -46,8 +46,4 @@ To explore the Crypto Dashboard:
 
 ## About the Creator
 
-This project was crafted with love, by passionate developer with a keen interest in cryptocurrencies and emerging technologies. Feel free to reach out with any questions, feedback, or collaboration opportunities!
-
----
-
-Thank you for joining us on this journey through the exciting world of cryptocurrencies. Whether you're here to learn, invest, or simply explore, we hope the Crypto Dashboard enriches your experience and empowers you to make informed decisions. Happy exploring!
+This project was crafted with love by Irene, a passionate developer with a keen interest in cryptocurrencies and emerging technologies. Feel free to reach out with any questions, feedback, or collaboration opportunities!
