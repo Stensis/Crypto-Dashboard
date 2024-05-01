@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./CryptoList.module.css"; // Import CSS module
+import styles from "./CryptoList.module.css"; 
 
 const CryptoList = ({ cryptos }) => {
   return (
@@ -9,10 +9,7 @@ const CryptoList = ({ cryptos }) => {
         {cryptos &&
           cryptos.map((crypto) => (
             <li key={crypto.id} className={styles.cryptoItem}>
-              {/* Use styles.linkStyle instead of className="linkStyle" */}
               <Link to={`/crypto-details/${crypto.id}`} className={styles.linkStyle}>
-
-              {/* <Link to={`/crypto-details/${crypto.id}`} className={styles.linkStyle}> */}
                 <div className={styles.logoContainer}>
                   <img
                     className={styles.logo}

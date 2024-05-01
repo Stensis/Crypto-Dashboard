@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { fetchCryptos } from "../../utils/api";
 import CryptoList from "../CryptoList/CryptoList";
-import CryptoDetails from "../CryptoDetails/CryptoDetails";
 import Styles from "./Homepage.module.css";
 import { LoadingData } from "../LoadingData/LoadingData";
 import { Error } from "../Error/Error";
 import { Pagination } from "../Pagination/Pagination";
+import { CryptoContext } from "../../CryptoContext";
 
 const Homepage = () => {
-  const [cryptos, setCryptos] = useState([]);
+  const { cryptos, setCryptos } = useContext(CryptoContext);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -27,7 +27,7 @@ const Homepage = () => {
     };
 
     getCryptos();
-  }, []);
+  }, [setCryptos]);
 
   // Calculate pagination parameters
   const pageSize = 12;
@@ -66,7 +66,6 @@ const Homepage = () => {
           pageSize={pageSize}
         />
       </div>
-      {<CryptoDetails cryptos={cryptos} />}
     </div>
   );
 };

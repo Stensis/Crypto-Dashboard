@@ -1,7 +1,7 @@
 .cryptoContainer {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Adjusted for four columns */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 50px;
   padding: 40px;
   width: 100%;
@@ -53,7 +53,7 @@
 }
 
 .row {
-  border-bottom: solid 1px rgb(173, 172, 172);
+  /* border-bottom: solid 1px rgb(173, 172, 172); */
   padding: 5px 0px;
   font-weight: 600;
   text-overflow: ellipsis;

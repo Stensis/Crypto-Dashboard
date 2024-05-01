@@ -8,8 +8,20 @@ The Crypto Dashboard offers a sleek and intuitive interface for exploring a wide
 
 ## Features
 
-- **Homepage**: Get a quick snapshot of the cryptocurrency market with a list of popular coins, complete with logos and key metrics.
+- **Sign Up**: You can sign up to the application.
+
+  ![Alt Text](./public/signUp.png)
+
+- **Login**: You can login to the application.
+
+  ![Alt Text](./public/login.png)
+
+- **Home page**: Get a quick snapshot of the cryptocurrency market with a list of popular coins, complete with logos and key metrics.
+  ![Alt Text](./public/HomePage.png)
+
 - **Details Page**: Click on any cryptocurrency to access detailed information, including historical data, market trends, and analysis.
+  ![Alt Text](./public/crypto-per-id.png)
+
 - **State-of-the-Art Technology**: Built using React, the Crypto Dashboard leverages modern frameworks and libraries for seamless performance and responsiveness.
 - **User-Friendly Design**: With a focus on simplicity and elegance, the dashboard offers a smooth and intuitive user experience across desktop and mobile devices.
 - **Robust Error Handling**: Rest assured, even in the face of API errors or network issues, the Crypto Dashboard handles errors gracefully and provides clear feedback to users.
@@ -26,6 +38,7 @@ The Crypto Dashboard offers a sleek and intuitive interface for exploring a wide
 ## Getting Started
 
 To explore the Crypto Dashboard:
+
 1. Clone the repository to your local machine.
 2. Install dependencies using `npm install` or `yarn install`.
 3. Start the development server using `npm start` or `yarn start`.
@@ -38,4 +51,3 @@ This project was crafted with love, by passionate developer with a keen interest
 ---
 
 Thank you for joining us on this journey through the exciting world of cryptocurrencies. Whether you're here to learn, invest, or simply explore, we hope the Crypto Dashboard enriches your experience and empowers you to make informed decisions. Happy exploring!
-# Crypto-Dashboard

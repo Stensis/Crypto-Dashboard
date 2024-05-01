@@ -1,48 +1,160 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { CryptoContext } from "../../CryptoContext";
+import styles from "./CryptoDetails.module.css";
 
-const CryptoDetails = ({ cryptos }) => {
-  console.log("Cryptos in CryptoDetails:", cryptos); 
+const CryptoDetails = () => {
+  const { cryptos } = useContext(CryptoContext);
+  const { id: paramId } = useParams();
 
   return (
-    <div>
-      <h2>Cryptocurrency Details</h2>
-      <ul>
+    <div className={styles.detailsContainer}>
+      <ul className={styles.subContainer}>
+        <h2 className={styles.header}>Cryptocurrency Details</h2>
         {cryptos &&
-          cryptos.map((crypto) => (
-            <li key={crypto.id}>
-              <img src={crypto.image} alt={crypto.name} />
-              <div>
-                <h3>{crypto.name}</h3>
-                <p>Symbol: {crypto.symbol.toUpperCase()}</p>
-                <p>Price: ${crypto.current_price}</p>
-                <p>Market Cap: ${crypto.market_cap}</p>
-                <p>24h Change: {crypto.price_change_percentage_24h}%</p>
-                <p>Market Cap Rank: {crypto.market_cap_rank}</p>
-                <p>Total Volume: ${crypto.total_volume}</p>
-                <p>High 24h: ${crypto.high_24h}</p>
-                <p>Low 24h: ${crypto.low_24h}</p>
-                <p>Price Change 24h: ${crypto.price_change_24h}</p>
-                <p>Market Cap Change 24h: ${crypto.market_cap_change_24h}</p>
-                <p>Circulating Supply: {crypto.circulating_supply}</p>
-                <p>Total Supply: {crypto.total_supply}</p>
-                <p>Max Supply: {crypto.max_supply}</p>
-                <p>All-Time High: ${crypto.ath}</p>
-                <p>
-                  All-Time High Change Percentage:{" "}
-                  {crypto.ath_change_percentage}%
-                </p>
-                <p>All-Time High Date: {crypto.ath_date}</p>
-                <p>All-Time Low: ${crypto.atl}</p>
-                <p>
-                  All-Time Low Change Percentage: {crypto.atl_change_percentage}
-                  %
-                </p>
-                <p>All-Time Low Date: {crypto.atl_date}</p>
-                <p>ROI: {crypto.roi ? JSON.stringify(crypto.roi) : ""}</p>
-                <p>Last Updated: {crypto.last_updated}</p>
-              </div>
-            </li>
-          ))}
+          cryptos.map((crypto) =>
+            crypto.id === paramId ? (
+              <li key={crypto.id} className={styles.li}>
+                <div className={styles.logoContainer}>
+                  <img
+                    src={crypto.image}
+                    alt={crypto.name}
+                    className={styles.logo}
+                  />
+                  <h3 className={styles.name}>{crypto.name}</h3>
+                </div>
+                <div className={styles.cryptoItem}>
+                  {/* column 1 */}
+                  <div className={styles.column}>
+                    <p>
+                      <span className={styles.label}>Symbol:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.symbol.toUpperCase()}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Price:</span>{" "}
+                      <span className={styles.value}>
+                        ${crypto.current_price}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Market Cap:</span>{" "}
+                      <span className={styles.value}>${crypto.market_cap}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>24h Change:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.price_change_percentage_24h}%
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Market Cap Rank:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.market_cap_rank}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Total Volume:</span>{" "}
+                      <span className={styles.value}>
+                        ${crypto.total_volume}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>High 24h:</span>{" "}
+                      <span className={styles.value}>${crypto.high_24h}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Low 24h:</span>{" "}
+                      <span className={styles.value}>${crypto.low_24h}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Price Change 24h:</span>{" "}
+                      <span className={styles.value}>
+                        ${crypto.price_change_24h}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>
+                        Market Cap Change 24h:
+                      </span>{" "}
+                      <span className={styles.value}>
+                        ${crypto.market_cap_change_24h}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Circulating Supply:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.circulating_supply}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>All-Time High:</span>{" "}
+                      <span className={styles.value}>${crypto.ath}</span>
+                    </p>
+                  </div>
+
+                  {/* column 2 */}
+                  <div className={styles.column}>
+                    <p>
+                      <span className={styles.label}>Total Supply:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.total_supply}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Max Supply:</span>{" "}
+                      <span className={styles.value}>{crypto.max_supply}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>All-Time High:</span>{" "}
+                      <span className={styles.value}>${crypto.ath}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>
+                        All-Time High Change Percentage:
+                      </span>{" "}
+                      <span className={styles.value}>
+                        {crypto.ath_change_percentage}%
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>All-Time High Date:</span>{" "}
+                      <span className={styles.value}>{crypto.ath_date}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>All-Time Low:</span>{" "}
+                      <span className={styles.value}>${crypto.atl}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>
+                        All-Time Low Change Percentage:
+                      </span>{" "}
+                      <span className={styles.value}>
+                        {crypto.atl_change_percentage}%
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>All-Time Low Date:</span>{" "}
+                      <span className={styles.value}>{crypto.atl_date}</span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>ROI:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.roi ? JSON.stringify(crypto.roi) : ""}
+                      </span>
+                    </p>
+                    <p>
+                      <span className={styles.label}>Last Updated:</span>{" "}
+                      <span className={styles.value}>
+                        {crypto.last_updated}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ) : null
+          )}
       </ul>
     </div>
   );

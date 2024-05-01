@@ -1,11 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styles from "./SignUp.module.css";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../AuthContext";
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const { setUserData } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -57,8 +55,7 @@ const SignUp = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // Update userData with the form data
-      setUserData(formData);
+    
 
       // Proceed with signup process
       console.log("Form submitted:", formData);

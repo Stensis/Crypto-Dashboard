@@ -1,10 +1,8 @@
-import React, { useState, useContext } from "react";
-import { AuthContext } from "../../../AuthContext";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 
 const LoginPage = () => {
-  const { setUserData } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -43,12 +41,8 @@ const LoginPage = () => {
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // Proceed with login process
       // Here you can make an API call to authenticate the user
       console.log("Form submitted:", formData);
-
-      // Simulate successful login by setting userData
-      setUserData({ email: formData.email });
 
       // Redirect to the homepage
       navigate("/dashboard");
