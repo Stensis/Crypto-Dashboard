@@ -2,8 +2,29 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  display: flex;
-  justify-content: center;
-  color: #ca2115;
+  padding: 24px 32px;
+  background: linear-gradient(to right, #1e293b, #0f172a);
+  color: #f87171;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #f87171;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
   transform: translate(-50%, -50%);
+  animation: fadeIn 0.6s ease-out;
+  max-width: 90%;
+  width: fit-content;
+  z-index: 9999;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }

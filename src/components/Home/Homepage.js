@@ -52,7 +52,6 @@ const Homepage = () => {
 
   return (
     <div>
-      <h1 className={Styles.header}>Cryptocurrency Dashboard</h1>
       <div className={Styles.cryptoContainer}>
         {paginatedCryptos.length !== 0 && (
           <CryptoList cryptos={paginatedCryptos} />

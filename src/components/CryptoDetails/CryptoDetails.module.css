@@ -1,81 +1,73 @@
 .detailsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.subContainer {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
+  background: radial-gradient(circle at top, #10172a, #0f172a);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .header {
   display: flex;
-  margin-top: 40px;
-  justify-content: center;
-}
-
-.logoContainer {
-  display: flex;
-  margin-top: 40px;
-  justify-content: center;
-  flex-direction: column;
   align-items: center;
-}
-
-.column {
-  flex: 1;
-  padding: 10px;
-}
-
-.label {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.value {
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.cryptoItem {
-  margin-bottom: 10px;
-  display: flex;
-  background-color: white;
-  flex-direction: column; 
-  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
-}
-
-.details {
-  flex: 1;
-  padding: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #00f2ff;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
 }
 
 .name {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00f2ff;
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
 }
 
-.li {
-  list-style: none !important;
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
 }
 
-@media (min-width: 768px) {
-  .cryptoItem {
-    flex-direction: row; 
-    justify-content: space-between; 
-  }
+.card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
 
-  .logoContainer {
-    flex-direction: row;
-    align-items: center;
-  }
+.card:hover {
+  transform: translateY(-10px);
+  background-color: #334155;
+}
+
+.card h3 {
+  color: #00f2ff;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.card strong {
+  color: #ffffff;
+}
+
+.notFound {
+  text-align: center;
+  color: #ff4d4f;
+  margin-top: 100px;
+  font-size: 24px;
 }

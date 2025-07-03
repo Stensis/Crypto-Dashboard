@@ -12,29 +12,18 @@ const SignUp = () => {
     confirmPassword: "",
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validation
     let newErrors = {};
-    if (!formData.name) {
-      newErrors.name = "Name is required";
-    }
+
+    if (!formData.name) newErrors.name = "Name is required";
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
@@ -43,7 +32,7 @@ const SignUp = () => {
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters long";
+      newErrors.password = "Minimum 6 characters";
     }
     if (!formData.confirmPassword) {
       newErrors.confirmPassword = "Please confirm your password";
@@ -51,81 +40,77 @@ const SignUp = () => {
       newErrors.confirmPassword = "Passwords do not match";
     }
 
-    // If there are errors, set them and prevent signup
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-    
-
-      // Proceed with signup process
       console.log("Form submitted:", formData);
-
-      // Navigate to login page after form submission
       navigate("/login");
     }
   };
 
   return (
-    <div className={styles.div}>
+    <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.center}>
-          <h4>Sign Up To Crypto Dashboard</h4>
-        </div>
-        <div>
-          <label className={styles.label}>FullName:</label>
+        <h2 className={styles.title}>🧾 Create CryptoVault Account</h2>
+        <p className={styles.subtitle}>Manage your assets securely</p>
+
+        <div className={styles.inputGroup}>
+          <label>👤 Full Name</label>
           <input
-            placeholder="John Doe"
             type="text"
             name="name"
+            placeholder="Jane Doe"
             value={formData.name}
             onChange={handleChange}
             className={styles.input}
           />
-          {errors.name && <span className={styles.p}>{errors.name}</span>}{" "}
+          {errors.name && <p className={styles.error}>{errors.name}</p>}
         </div>
-        <div>
-          <label>Email Address:</label>
+
+        <div className={styles.inputGroup}>
+          <label>📧 Email</label>
           <input
-            placeholder="johndoe@gmail.com"
             type="email"
             name="email"
+            placeholder="janedoe@mail.com"
             value={formData.email}
             onChange={handleChange}
             className={styles.input}
           />
-          {errors.email && <span className={styles.p}>{errors.email}</span>}{" "}
+          {errors.email && <p className={styles.error}>{errors.email}</p>}
         </div>
-        <div>
-          <label>Password:</label>
+
+        <div className={styles.inputGroup}>
+          <label>🔒 Password</label>
           <input
-            placeholder="m#P52s@ap$V"
             type="password"
             name="password"
+            placeholder="********"
             value={formData.password}
             onChange={handleChange}
             className={styles.input}
           />
-          {errors.password && (
-            <span className={styles.p}>{errors.password}</span>
-          )}{" "}
+          {errors.password && <p className={styles.error}>{errors.password}</p>}
         </div>
-        <div>
-          <label>Confirm Password:</label>
+
+        <div className={styles.inputGroup}>
+          <label>🔒 Confirm Password</label>
           <input
-            placeholder="m#P52s@ap$V"
             type="password"
             name="confirmPassword"
+            placeholder="********"
             value={formData.confirmPassword}
             onChange={handleChange}
             className={styles.input}
           />
           {errors.confirmPassword && (
-            <span className={styles.p}>{errors.confirmPassword}</span>
-          )}{" "}
+            <p className={styles.error}>{errors.confirmPassword}</p>
+          )}
         </div>
+
         <button type="submit" className={styles.button}>
-          Sign Up
-        </button>{" "}
+          🚀 Sign Up
+        </button>
       </form>
     </div>
   );

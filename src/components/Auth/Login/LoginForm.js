@@ -26,7 +26,6 @@ const LoginPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation
     let newErrors = {};
     if (!formData.email) {
       newErrors.email = "Email is required";
@@ -37,46 +36,46 @@ const LoginPage = () => {
       newErrors.password = "Password is required";
     }
 
-    // If there are errors, set them and prevent login
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
     } else {
-      // Here you can make an API call to authenticate the user
       console.log("Form submitted:", formData);
-
-      // Redirect to the homepage
       navigate("/dashboard");
     }
   };
 
   return (
-    <div className={styles.div}>
+    <div className={styles.container}>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <h2>Login To Crypto Dashboard</h2>
-        <div>
+        <h2 className={styles.title}>🔐 CryptoVault Login</h2>
+        <p className={styles.subtitle}>Secure access to your portfolio</p>
+
+        <div className={styles.inputGroup}>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Email"
+            placeholder="📧 Email address"
             className={styles.input}
           />
-          {errors.email && <p className={styles.p}>{errors.email}</p>}
+          {errors.email && <p className={styles.error}>{errors.email}</p>}
         </div>
-        <div>
+
+        <div className={styles.inputGroup}>
           <input
             type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Password"
+            placeholder="🔒 Password"
             className={styles.input}
           />
-          {errors.password && <p className={styles.p}>{errors.password}</p>}
+          {errors.password && <p className={styles.error}>{errors.password}</p>}
         </div>
+
         <button type="submit" className={styles.button}>
-          Login
+          🚀 Login to Vault
         </button>
       </form>
     </div>

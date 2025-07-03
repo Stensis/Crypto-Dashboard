@@ -1,53 +1,81 @@
-.div {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #e9ecef;
-  }
-  
-  .form {
-    background-color: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
-  }
-  
-  .input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-  }
-  
-  .button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  .p {
-    color: red;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-  }
-  
-  /* Align labels to flex-start */
-  label {
-    align-self: flex-start;
-  }
-  
+.container {
+  background: linear-gradient(to bottom right, #0d1117, #1c1f26);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form {
+  background-color: #161b22;
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  color: #f1f1f1;
+}
+
+.title {
+  font-size: 26px;
+  color: #00f2ff;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 28px;
+  color: #aaa;
+}
+
+.inputGroup {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #d1d1d1;
+}
+
+.input {
+  padding: 12px 16px;
+  border: 1px solid #2a2e35;
+  background-color: #1e242c;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.input:focus {
+  border-color: #00f2ff;
+}
+
+.button {
+  background-color: #00f2ff;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #00bcd4;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 5px;
+}

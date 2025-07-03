@@ -4,31 +4,41 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: whitesmoke;
-  color: #1976d2;
-  font-size: 24px;
+  inset: 0;
+  background: linear-gradient(to bottom right, #0f172a, #1e293b);
+  color: #38bdf8;
+  font-size: 20px;
+  z-index: 999;
 }
 
-.loadingIcon {
-  display: inline-block;
-  margin-bottom: 24px;
-  width: 40px;
-  height: 40px;
+.loadingText {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #94a3b8;
+  animation: fadeIn 1.2s ease-in-out infinite alternate;
+}
+
+.loadingSpinner {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 4px solid #1976d2;
+  border: 4px solid #38bdf8;
   border-top-color: transparent;
-  animation: spin 1s infinite ease-in-out;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
   }
 }
